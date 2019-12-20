@@ -1,0 +1,17 @@
+citHeader("To cite twitterbot in publications please use:")
+
+citEntry(entry = "Manual",
+  title        = "{twitterbot}: Tweet Last Publications From The IRAMAT-CRP2A Laboratory",
+  author       = c(person("Nicolas", "Frerebeau", role = "aut")),
+  year         = "2019",
+  organization = "Université Bordeaux Montaigne",
+  address      = "Pessac, France",
+  note         = "R package version 0.1",
+  url          = "https://doi.org/10.5281/zenodo.1472077",
+
+  textVersion  =
+  paste("Frerebeau, Nicolas (2019).",
+        "twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory.",
+        "R package version 0.1",
+        "Université Bordeaux Montaigne, Pessac, France.")
+)

@@ -1,0 +1,34 @@
+Package: twitterbot
+Title: Tweet Last Publications From The IRAMAT-CRP2A Laboratory
+Version: 0.1
+Authors@R: 
+    c(person(given = "Nicolas",
+             family = "Frerebeau",
+             role = c("aut", "cre"),
+             email = "nicolas.frerebeau@u-bordeaux-montaigne.fr",
+             comment = c(ORCID = "https://orcid.org/0000-0001-5759-4944")),
+      person(given = "Université Bordeaux Montaigne",
+             role = c("cph", "fnd")))
+Description: This package accesses documents from the Open
+    Archive HAL (https://hal.archives-ouvertes.fr/) and tweets the last
+    scientific publications from the CRP2A lab on a daily basis.
+License: GPL-3
+Depends: R (>= 3.6)
+Imports:
+    rtweet,
+    solrium,
+    tools,
+    utils
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Collate: 
+    'AllGenerics.R'
+    'hal.R'
+    'tweet.R'
+    'twitterbot-package.R'
