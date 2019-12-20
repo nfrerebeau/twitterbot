@@ -5,10 +5,10 @@
 
 This package accesses documents from the [Open Archive
 HAL](https://hal.archives-ouvertes.fr/) and tweets the last scientific
-publications from the CRP2A laboratory. It can be used with a cron job
-to schedule tweets on a daily/weekly basis.
-
-See [@CRP2Abib](https://twitter.com/crp2abib).
+publications from the CRP2A laboratory
+([@CRP2Abib](https://twitter.com/crp2abib)). It can be used with a cron
+job to schedule tweets on a daily/weekly basis (see
+[cronR](https://github.com/bnosac/cronR)).
 
 ## Installation
 
