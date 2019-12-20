@@ -1,35 +1,26 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
 # twitterbot
-This package accesses documents from the [Open Archive HAL](https://hal.archives-ouvertes.fr/) and tweets the last scientific publications from the CRP2A lab on a daily basis.
 
-See [\@CRP2Abib](https://twitter.com/crp2abib).
-    
+This package accesses documents from the [Open Archive
+HAL](https://hal.archives-ouvertes.fr/) and tweets the last scientific
+publications from the CRP2A lab on a daily basis.
+
+See [@CRP2Abib](https://twitter.com/crp2abib).
+
 ## Installation
 
 You you can install this R package from GitHub with:
 
-```{r gh-installation, eval=FALSE}
+``` r
 # install.packages("devtools")
 remotes::install_github("crp2a/twitterbot")
 ```
 
 ## Example
 
-```{r bot, eval=FALSE}
+``` r
 library(twitterbot)
 
 ## Read the log file
