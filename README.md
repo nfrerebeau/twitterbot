@@ -6,9 +6,7 @@
 This package accesses documents from the [Open Archive
 HAL](https://hal.archives-ouvertes.fr/) and tweets the last scientific
 publications from the CRP2A laboratory
-([@CRP2Abib](https://twitter.com/crp2abib)). It can be used with a cron
-job to schedule tweets on a daily/weekly basis (see
-[cronR](https://github.com/bnosac/cronR)).
+([@CRP2Abib](https://twitter.com/crp2abib)).
 
 ## Installation
 
@@ -25,7 +23,7 @@ remotes::install_github("crp2a/twitterbot")
 library(twitterbot)
 
 ## Set the path of the log file
-log_path <- "./log"
+log_path <- file.path(Sys.getenv("HOME"), "bin", "twitter_hal.log")
 ## Read the log file
 log_tweet <- twitterbot::readLog(file = log_path)
 
@@ -47,4 +45,32 @@ if (length(doc_keep) > 0) {
     silent = TRUE
   )
 }
+```
+
+Make a cron job to schedule tweets on a daily basis with
+[**cronR**](https://github.com/bnosac/cronR):
+
+``` r
+library(cronR)
+
+cmd <- cronR::cron_rscript(
+  rscript = file.path(Sys.getenv("HOME"), "bin", "twitter.R"),
+  rscript_log = file.path(Sys.getenv("HOME"), "bin", "twitter_cron.log"),
+  cmd = file.path(Sys.getenv("R_HOME"), "bin", "Rscript"),
+  log_append = TRUE
+)
+
+cronR::cron_add(
+  command = cmd,
+  frequency = "daily",
+  at = "12:00",
+  id = "CRP2Abib",
+  tags = c("R", "HAL", "Twitter"),
+  description = "CRP2A Twitter Bot",
+  user = ""
+)
+
+# cronR::cron_njobs()
+# cronR::cron_ls(id = "CRP2Abib")
+# cronR::cron_clear(ask = FALSE)
 ```
