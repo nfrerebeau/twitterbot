@@ -33,6 +33,7 @@ remotes::install_github("crp2a/twitterbot")
 library(twitterbot)
 
 ## Set the path of the log file
+## This file ensures that no document is tweeted twice
 log_path <- file.path(Sys.getenv("HOME"), "bin", "twitter_hal.log")
 ## Read the log file
 log_tweet <- twitterbot::readLog(file = log_path)

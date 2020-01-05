@@ -34,9 +34,11 @@ NULL
 NULL
 
 #' @rdname tweet
+#' @export
 composeTweet <- function(x, ...) UseMethod("composeTweet")
 
 #' @rdname tweet
+#' @export
 sendTweet <- function(x, ...) UseMethod("sendTweet")
 
 #' Log
