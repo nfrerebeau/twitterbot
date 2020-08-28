@@ -6,7 +6,7 @@
 \alias{writeLog}
 \title{Log}
 \usage{
-readLog(file, silent = TRUE)
+readLog(file, silent = TRUE, ...)
 
 writeLog(file, tweet_id, doc_id)
 }
@@ -18,12 +18,12 @@ line of the file (see \code{\link[utils]{read.table}}).}
 \item{silent}{A \code{\link{logical}} scalar: should the report
 of error messages be suppressed?}
 
+\item{...}{Extra parameters to be passed to \code{\link[utils]{read.table}}.}
+
 \item{tweet_id}{A \code{\link{character}} string giving the id of the tweet.}
 
 \item{doc_id}{A \code{\link{character}} string giving the id of the HAL
 document.}
-
-\item{...}{Extra parameters to be passed to \code{\link[utils]{read.table}}.}
 }
 \value{
 \code{readLog} returns a \code{\link{data.frame}} if the log file exists and

@@ -3,6 +3,13 @@
 
 # twitterbot
 
+<!-- badges: start -->
+
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+<!-- badges: end -->
+
 This package accesses documents from the [Open Archive
 HAL](https://hal.archives-ouvertes.fr/) and tweets the last scientific
 publications from the CRP2A laboratory
@@ -23,6 +30,7 @@ remotes::install_github("crp2a/twitterbot")
 library(twitterbot)
 
 ## Set the path of the log file
+## This file ensures that no document is tweeted twice
 log_path <- file.path(Sys.getenv("HOME"), "bin", "twitter_hal.log")
 ## Read the log file
 log_tweet <- twitterbot::readLog(file = log_path)

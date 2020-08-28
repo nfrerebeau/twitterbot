@@ -8,7 +8,7 @@
 \title{twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory}
 \description{
 This package accesses documents from the Open
-    Archive HAL (https://hal.archives-ouvertes.fr/) and tweets the last
+    Archive HAL <https://hal.archives-ouvertes.fr/> and tweets the last
     scientific publications from the CRP2A lab on a daily basis.
 }
 \details{
@@ -18,6 +18,14 @@ This package accesses documents from the Open
  \strong{Version:} \tab 0.1 \cr
  \strong{License:} \tab GPL-3 \cr
 }
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/crp2a/twitterbot}
+  \item Report bugs at \url{https://github.com/crp2a/twitterbot/issues}
+}
+
 }
 \author{
 \strong{Full list of authors and contributors} (alphabetic order)

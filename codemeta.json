@@ -1,0 +1,142 @@
+{
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
+  "@type": "SoftwareSourceCode",
+  "identifier": "twitterbot",
+  "description": "This package accesses documents from the Open\n    Archive HAL <https://hal.archives-ouvertes.fr/> and tweets the last\n    scientific publications from the CRP2A lab on a daily basis.",
+  "name": "twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory",
+  "license": "https://spdx.org/licenses/GPL-3.0",
+  "version": "0.1",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Nicolas",
+      "familyName": "Frerebeau",
+      "email": "nicolas.frerebeau@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0001-5759-4944"
+    }
+  ],
+  "contributor": {},
+  "copyrightHolder": [
+    {
+      "@type": "Organization",
+      "name": "Université Bordeaux Montaigne"
+    }
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Université Bordeaux Montaigne"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Nicolas",
+      "familyName": "Frerebeau",
+      "email": "nicolas.frerebeau@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0001-5759-4944"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.6"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rtweet",
+      "name": "rtweet",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rtweet"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "solrium",
+      "name": "solrium",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=solrium"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "tools",
+      "name": "tools"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "utils",
+      "name": "utils"
+    }
+  ],
+  "codeRepository": "https://github.com/crp2a/twitterbot",
+  "readme": "https://github.com/crp2a/twitterbot/blob/master/README.md",
+  "fileSize": "101.008KB",
+  "keywords": [
+    "open-archives",
+    "twitter-bot",
+    "r-package"
+  ],
+  "citation": [
+    {
+      "@type": "SoftwareSourceCode",
+      "datePublished": "2019",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "Nicolas",
+          "familyName": "Frerebeau"
+        }
+      ],
+      "name": "{twitterbot}: Tweet Last Publications From The IRAMAT-CRP2A Laboratory",
+      "url": "https://doi.org/10.5281/zenodo.1472077",
+      "description": "R package version 0.1"
+    }
+  ],
+  "issueTracker": "https://github.com/crp2a/twitterbot/issues"
+}

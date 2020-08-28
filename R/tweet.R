@@ -3,7 +3,7 @@ NULL
 
 #' @rdname tweet
 #' @export
-composeTweet.hal_document <- function(x) {
+composeTweet.hal_document <- function(x, ...) {
   title_s <- x[["title_s"]][[1]]
   licence_s <- x[["licence_s"]]
   domain_s <- x[["domainAllCode_s"]]
@@ -53,7 +53,7 @@ composeTweet.hal_document <- function(x) {
 
 #' @rdname tweet
 #' @export
-sendTweet.hal_document <- function(x, log, silent = TRUE, test = FALSE) {
+sendTweet.hal_document <- function(x, log, silent = TRUE, test = FALSE, ...) {
   # Compose message
   tweet_msg <- composeTweet(x)
   if (test) {
@@ -64,11 +64,11 @@ sendTweet.hal_document <- function(x, log, silent = TRUE, test = FALSE) {
       expr = rtweet::post_tweet(status = tweet_msg),
       silent = silent
     )
-    if(inherits(tweet, "try-error")) {
+    if (inherits(tweet, "try-error")) {
       return(FALSE)
     } else {
       # Lookup status_id
-      timeline <- rtweet::get_timeline(rtweet:::home_user())
+      timeline <- rtweet::get_timeline("CRP2Abib")
       # ID for reply
       tweet_id <- timeline$status_id[1]
       doc_id <- x[["halId_s"]]
@@ -82,10 +82,10 @@ sendTweet.hal_document <- function(x, log, silent = TRUE, test = FALSE) {
 
 #' @rdname log
 #' @export
-readLog <- function(file, silent = TRUE) {
+readLog <- function(file, silent = TRUE, ...) {
   if (file.exists(file)) {
     tweet_log <- try(
-      expr = utils::read.table(file, header = FALSE, sep = " "),
+      expr = utils::read.table(file, header = FALSE, sep = " ", ...),
       silent = silent
     )
     if (!inherits(tweet_log, "try-error")) {

@@ -12,9 +12,9 @@ composeTweet(x, ...)
 
 sendTweet(x, ...)
 
-\method{composeTweet}{hal_document}(x)
+\method{composeTweet}{hal_document}(x, ...)
 
-\method{sendTweet}{hal_document}(x, log, silent = TRUE, test = FALSE)
+\method{sendTweet}{hal_document}(x, log, silent = TRUE, test = FALSE, ...)
 }
 \arguments{
 \item{x}{A \code{\link{list}} of document references.}
