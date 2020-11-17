@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "twitterbot",
-  "description": "This package accesses documents from the Open\n    Archive HAL <https://hal.archives-ouvertes.fr/> and tweets the last\n    scientific publications from the CRP2A lab on a daily basis.",
+  "description": "Accesses documents from the Open\n    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the last\n    scientific publications from the CRP2A lab on a daily basis.",
   "name": "twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1",
@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+  "runtimePlatform": "R version 4.0.3 (2020-10-10)",
   "author": [
     {
       "@type": "Person",
@@ -49,6 +49,18 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
+      "identifier": "cronR",
+      "name": "cronR",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=cronR"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
       "provider": {
@@ -77,7 +89,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 3.6"
+      "version": ">= 3.4"
     },
     {
       "@type": "SoftwareApplication",
@@ -116,7 +128,7 @@
   ],
   "codeRepository": "https://github.com/crp2a/twitterbot",
   "readme": "https://github.com/crp2a/twitterbot/blob/master/README.md",
-  "fileSize": "101.008KB",
+  "fileSize": "101.531KB",
   "keywords": [
     "open-archives",
     "twitter-bot",
@@ -138,5 +150,6 @@
       "description": "R package version 0.1"
     }
   ],
-  "issueTracker": "https://github.com/crp2a/twitterbot/issues"
+  "issueTracker": "https://github.com/crp2a/twitterbot/issues",
+  "developmentStatus": "https://www.repostatus.org/#wip"
 }

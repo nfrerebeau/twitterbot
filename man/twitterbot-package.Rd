@@ -7,8 +7,8 @@
 \alias{twitterbot}
 \title{twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory}
 \description{
-This package accesses documents from the Open
-    Archive HAL <https://hal.archives-ouvertes.fr/> and tweets the last
+Accesses documents from the Open
+    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the last
     scientific publications from the CRP2A lab on a daily basis.
 }
 \details{

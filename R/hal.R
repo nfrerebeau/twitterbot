@@ -6,6 +6,7 @@ NULL
 getDocuments <- function(id, limit = 10) {
   # Query parameters
   hal_fields <- c(
+    # "authFullName_s",      # Auteur
     "docType_s",           # Type de document (référentiel HAL)
     "doiId_s",             # DOI
     "fileMain_s ",         # URL du fichier principal
