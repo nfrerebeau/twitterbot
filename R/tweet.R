@@ -13,12 +13,13 @@ composeTweet.hal_document <- function(x, ...) {
   if (length(title_s) == 0)
     return(NULL)
 
-  # Title: 127 to 128 char
+  # Title: 125 to 128 char
   title <- trimws(strtrim(title_s, 125))
   if (nchar(title_s) > 125) title <- paste0(title, "...")
   # Hashtags
   ## Open Access: 0 to 11 char
-  license <- if (isOpenAcess(licence_s)) "#OpenAccess" else ""
+  open_access <- isOpenAcessLicense(licence_s) | isOpenAcessDOI(doiId_s)
+  license <- ifelse(open_access, "#OpenAccess", "")
   ## Domains: 0 to 80 char
   if (!is.null(domain_s)) {
     tag <- makeHashTag_domain(domain_s)
@@ -131,18 +132,26 @@ makeHashTag_domain <- function(x) {
   tag
 }
 
-#' Open License
+#' Open Access
 #'
-#' Checks if a license is open access.
-#' @param x A \code{\link{character}} vector.
+#' Checks if a document is open access.
+#' @param x A \code{\link{character}} string (license or DOI).
 #' @return A \code{\link{logical}} scalar.
 #' @author N. Frerebeau
 #' @keywords internal
 #' @noRd
-isOpenAcess <- function(x) {
-  open_licenses <- "(artlibre|creativecommons|publicdomain)"
+isOpenAcessLicense <- function(x) {
+  open_license <- "(artlibre|creativecommons|publicdomain)"
   if (!is.null(x)) {
-    grepl(pattern = open_licenses, x, ignore.case = TRUE)
+    grepl(pattern = open_license, x, ignore.case = TRUE)
+  } else {
+    FALSE
+  }
+}
+isOpenAcessDOI <- function(x) {
+  open_doi <- "^(10.5281/zenodo.|10.31223/osf.io/)"
+  if (!is.null(x)) {
+    grepl(pattern = open_doi, x, ignore.case = TRUE)
   } else {
     FALSE
   }
