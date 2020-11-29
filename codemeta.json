@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.0.3 (2020-10-10)",
+  "runtimePlatform": "R version 4.1.1 (2021-08-10)",
   "author": [
     {
       "@type": "Person",
@@ -128,7 +128,7 @@
   ],
   "codeRepository": "https://github.com/crp2a/twitterbot",
   "readme": "https://github.com/crp2a/twitterbot/blob/master/README.md",
-  "fileSize": "101.531KB",
+  "fileSize": "42.739KB",
   "keywords": [
     "open-archives",
     "twitter-bot",
@@ -151,5 +151,6 @@
     }
   ],
   "issueTracker": "https://github.com/crp2a/twitterbot/issues",
-  "developmentStatus": "https://www.repostatus.org/#wip"
+  "developmentStatus": ["https://www.repostatus.org/#wip", "https://www.tidyverse.org/lifecycle/#experimental"],
+  "relatedLink": "https://gitlab.huma-num.fr/archeosciences/twitterbot"
 }

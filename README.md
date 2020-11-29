@@ -8,6 +8,7 @@
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
 This package accesses documents from the [Open Archive
@@ -20,7 +21,7 @@ publications from the CRP2A laboratory
 You you can install this R package from GitHub with:
 
 ``` r
-# install.packages("devtools")
+# install.packages("remotes")
 remotes::install_github("crp2a/twitterbot")
 ```
 
@@ -31,7 +32,7 @@ library(twitterbot)
 
 ## Set the path of the log file
 ## This file ensures that no document is tweeted twice
-log_path <- file.path(Sys.getenv("HOME"), "bin", "twitter_hal.log")
+log_path <- file.path(Sys.getenv("HOME"), "twitter_hal.log")
 ## Read the log file
 log_tweet <- twitterbot::readLog(file = log_path)
 
@@ -62,8 +63,8 @@ Make a cron job to schedule tweets on a daily basis with
 library(cronR)
 
 cmd <- cronR::cron_rscript(
-  rscript = file.path(Sys.getenv("HOME"), "bin", "twitter.R"),
-  rscript_log = file.path(Sys.getenv("HOME"), "bin", "twitter_cron.log"),
+  rscript = file.path(Sys.getenv("HOME"), "twitter.R"),
+  rscript_log = file.path(Sys.getenv("HOME"), "twitter_cron.log"),
   cmd = file.path(Sys.getenv("R_HOME"), "bin", "Rscript"),
   log_append = TRUE
 )
