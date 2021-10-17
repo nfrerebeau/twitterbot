@@ -19,15 +19,6 @@ the output of \code{f}.
 \description{
 Logs the output of any function.
 }
-\details{
-The log file must have four columns separated by a single white space:
-\itemize{
-\item Date (YYYY-MM-DD);
-\item Time (HH-MM-SS);
-\item Tweet (status) id;
-\item Message unique id.
-}
-}
 \author{
 N. Frerebeau
 }

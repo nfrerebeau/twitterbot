@@ -19,6 +19,9 @@ class \code{hal_document}.
 \description{
 Get Documents From HAL
 }
+\details{
+Retrieves documents from HAL published during the last year.
+}
 \examples{
 \dontrun{
 get_hal_team("399901")

@@ -8,7 +8,7 @@
 \title{twitterbot: A Twitter Bot for the Lab}
 \description{
 Accesses documents from the Open
-    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the lastest
+    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the latest
     scientific publications.
 }
 \details{

@@ -6,14 +6,6 @@
 #' @param f A [`function`].
 #' @param file A [`character`] string naming the file to print the output
 #'  of `f`.
-#' @details
-#'  The log file must have four columns separated by a single white space:
-#'
-#'  * Date (YYYY-MM-DD);
-#'  * Time (HH-MM-SS);
-#'  * Tweet (status) id;
-#'  * Message unique id.
-#'
 #' @return
 #'  `logger()` is a decorator function called for its side-effect. Returns
 #'  the output of `f`.

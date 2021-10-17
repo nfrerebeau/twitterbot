@@ -4,6 +4,8 @@
 #'
 #' @param id A [`character`] string giving the structure or the author id.
 #' @param limit An [`integer`] specifying the number of results to be returned.
+#' @details
+#'  Retrieves documents from HAL published during the last year.
 #' @return
 #'  A [`list`] of document references. Each element of the `list` is a `list` of
 #'  class `hal_document`.
