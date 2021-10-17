@@ -5,8 +5,8 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "twitterbot",
-  "description": "Accesses documents from the Open\n    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the last\n    scientific publications from the CRP2A lab on a daily basis.",
-  "name": "twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory",
+  "description": "Accesses documents from the Open\n    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the latest\n    scientific publications.",
+  "name": "twitterbot: A Twitter Bot for the Lab",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1",
   "programmingLanguage": {
@@ -126,9 +126,9 @@
       "name": "utils"
     }
   ],
-  "codeRepository": "https://github.com/crp2a/twitterbot",
-  "readme": "https://github.com/crp2a/twitterbot/blob/master/README.md",
-  "fileSize": "42.739KB",
+  "codeRepository": "https://github.com/nfrerebeau/twitterbot",
+  "readme": "https://github.com/nfrerebeau/twitterbot/blob/master/README.md",
+  "fileSize": "28.519KB",
   "keywords": [
     "open-archives",
     "twitter-bot",
@@ -150,7 +150,7 @@
       "description": "R package version 0.1"
     }
   ],
-  "issueTracker": "https://github.com/crp2a/twitterbot/issues",
-  "developmentStatus": ["https://www.repostatus.org/#wip", "https://www.tidyverse.org/lifecycle/#experimental"],
+  "issueTracker": "https://github.com/nfrerebeau/twitterbot/issues",
+  "developmentStatus": "https://www.repostatus.org/#wip",
   "relatedLink": "https://gitlab.huma-num.fr/archeosciences/twitterbot"
 }

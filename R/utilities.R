@@ -8,7 +8,8 @@
 #' @author N. Frerebeau
 #' @keywords internal
 #' @noRd
-makeHashTag_keyword <- function(x) {
+keyword_to_hashtag <- function(x) {
+  x <- as.character(x)
   # Title case
   tag <- tools::toTitleCase(x)
   # Remove space and punctuation
@@ -16,16 +17,15 @@ makeHashTag_keyword <- function(x) {
   # Add a "#" at the beginning
   tag <- paste0("#", tag)
   # Remove doublons
-  tag <- droplevels(tag)
   tag <- unique(tag)
   tag
 }
 
-makeHashTag_domain <- function(x) {
+domain_to_hashtag <- function(x) {
   index <- which(.hal_domain$domain %in% x)
-  tag <- .hal_domain[index, "tag", drop = TRUE]
+  tag <- .hal_domain$tag[index]
   # Remove doublons
-  tag <- droplevels(tag)
+  tag <- as.character(tag)
   tag <- unique(tag)
   tag
 }
@@ -39,7 +39,7 @@ makeHashTag_domain <- function(x) {
 #' @author N. Frerebeau
 #' @keywords internal
 #' @noRd
-isOpenAcessLicense <- function(x) {
+is_oa_license <- function(x) {
   open_license <- "(artlibre|creativecommons|publicdomain)"
   if (!is.null(x)) {
     grepl(pattern = open_license, x, ignore.case = TRUE)
@@ -48,7 +48,7 @@ isOpenAcessLicense <- function(x) {
   }
 }
 
-isOpenAcessDOI <- function(x) {
+is_oa_doi <- function(x) {
   open_doi <- "^(10.5281/zenodo.|10.31223/osf.io/)"
   if (!is.null(x)) {
     grepl(pattern = open_doi, x, ignore.case = TRUE)

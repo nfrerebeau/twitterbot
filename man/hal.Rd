@@ -2,32 +2,27 @@
 % Please edit documentation in R/hal.R
 \name{hal}
 \alias{hal}
-\alias{getDocuments}
-\alias{cleanDocuments}
+\alias{get_hal_team}
 \title{Get Documents From HAL}
 \usage{
-getDocuments(id, limit = 10)
-
-cleanDocuments(x, log, keep = 1:10)
+get_hal_team(id, limit = 10)
 }
 \arguments{
-\item{id}{A \code{\link{character}} string giving the structure id.}
+\item{id}{A \code{\link{character}} string giving the structure or the author id.}
 
 \item{limit}{An \code{\link{integer}} specifying the number of results to be returned.}
-
-\item{x}{A \code{\link{list}} of document references.}
-
-\item{log}{A \code{\link{data.frame}}.}
-
-\item{keep}{An \code{\link{integer}} vector giving the indices of the documents to be
-kept.}
 }
 \value{
-A \code{\link{list}} of document references. Each element of the list is a list of
+A \code{\link{list}} of document references. Each element of the \code{list} is a \code{list} of
 class \code{hal_document}.
 }
 \description{
 Get Documents From HAL
+}
+\examples{
+\dontrun{
+get_hal_team("399901")
+}
 }
 \author{
 N. Frerebeau

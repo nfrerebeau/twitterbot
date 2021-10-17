@@ -28,10 +28,7 @@
 #' @keywords internal
 "_PACKAGE"
 
-# Quiets concerns of R CMD check: the .'s that appear in pipelines
-# See https://github.com/tidyverse/magrittr/issues/29
-if(getRversion() >= "2.15.1") utils::globalVariables(c("."))
-
 #' @import solrium
-#' @import rtweet
+#' @importFrom rtweet get_timeline post_tweet
+#' @importFrom utils read.table
 NULL

@@ -10,7 +10,7 @@ Authors@R:
       person(given = "Université Bordeaux Montaigne",
              role = c("cph", "fnd")))
 Description: Accesses documents from the Open
-    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the lastest
+    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the latest
     scientific publications.
 License: GPL-3
 URL: https://github.com/nfrerebeau/twitterbot

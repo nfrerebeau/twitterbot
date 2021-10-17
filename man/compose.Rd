@@ -2,21 +2,25 @@
 % Please edit documentation in R/tweet.R
 \name{compose}
 \alias{compose}
-\alias{composeTweet}
-\alias{composeTweet.hal_document}
+\alias{compose.hal_documents}
+\alias{compose.hal_document}
 \title{Compose Tweet}
 \usage{
-composeTweet(x, ...)
+compose(x, ...)
 
-\method{composeTweet}{hal_document}(x, ...)
+\method{compose}{hal_documents}(x, ...)
+
+\method{compose}{hal_document}(x, ...)
 }
 \arguments{
-\item{x}{A \code{\link{list}} of document references.}
+\item{x}{A \code{\link{list}} of document references
+(typically a list of class \code{\link[=get_hal_team]{hal_documents}}).}
 
 \item{...}{Currently not used.}
 }
 \value{
-Returns a \code{\link{character}} string (tweet message).
+Returns a \code{\link{character}} string (tweet message) or a \code{\link{list}} of \code{character}
+strings.
 }
 \description{
 Compose Tweet
