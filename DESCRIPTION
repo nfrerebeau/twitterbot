@@ -22,7 +22,7 @@ Imports:
     tools,
     utils
 Suggests: 
-    cronR,
+    testthat (>= 3.0.0),
     knitr,
     rmarkdown
 VignetteBuilder: 
@@ -37,3 +37,4 @@ Collate:
     'tweet.R'
     'twitterbot-package.R'
     'utilities.R'
+Config/testthat/edition: 3
