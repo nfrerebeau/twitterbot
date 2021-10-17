@@ -7,15 +7,15 @@
 \alias{twitterbot}
 \title{twitterbot: A Twitter Bot for the Lab}
 \description{
-Accesses documents from the Open
-    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the latest
-    scientific publications.
+Accesses documents from the Open Archive HAL
+    <https://hal.archives-ouvertes.fr> and tweets the latest scientific
+    publications.
 }
 \details{
 \tabular{ll}{
 \strong{Package:} \tab twitterbot \cr
 \strong{Type:} \tab Package \cr
-\strong{Version:} \tab 0.1 \cr
+\strong{Version:} \tab 0.0.0.9000 \cr
 \strong{License:} \tab GPL-3 \cr
 }
 }
@@ -23,6 +23,7 @@ Accesses documents from the Open
 Useful links:
 \itemize{
   \item \url{https://github.com/nfrerebeau/twitterbot}
+  \item \url{https://nfrerebeau.github.io/twitterbot}
   \item Report bugs at \url{https://github.com/nfrerebeau/twitterbot/issues}
 }
 

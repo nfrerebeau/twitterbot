@@ -8,7 +8,7 @@
   "description": "Accesses documents from the Open Archive HAL\n    <https://hal.archives-ouvertes.fr> and tweets the latest scientific\n    publications.",
   "name": "twitterbot: A Twitter Bot for the Lab",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.9000",
+  "version": "0.0.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -129,29 +129,17 @@
   ],
   "codeRepository": "https://github.com/nfrerebeau/twitterbot",
   "readme": "https://github.com/nfrerebeau/twitterbot/blob/master/README.md",
-  "fileSize": "29.833KB",
+  "fileSize": "29.791KB",
   "keywords": [
     "open-archives",
     "twitter-bot",
     "r-package"
   ],
-  "citation": [
-    {
-      "@type": "SoftwareSourceCode",
-      "datePublished": "2019",
-      "author": [
-        {
-          "@type": "Person",
-          "givenName": "Nicolas",
-          "familyName": "Frerebeau"
-        }
-      ],
-      "name": "{twitterbot}: Tweet Last Publications From The IRAMAT-CRP2A Laboratory",
-      "url": "https://doi.org/10.5281/zenodo.1472077",
-      "description": "R package version 0.1"
-    }
-  ],
   "issueTracker": "https://github.com/nfrerebeau/twitterbot/issues",
   "developmentStatus": "https://www.repostatus.org/#wip",
-  "relatedLink": ["https://gitlab.huma-num.fr/archeosciences/twitterbot", "https://nfrerebeau.github.io/twitterbot"]
+  "relatedLink": [
+    "https://gitlab.huma-num.fr/archeosciences/twitterbot",
+    "https://nfrerebeau.github.io/twitterbot"
+  ],
+  "releaseNotes": "https://github.com/nfrerebeau/twitterbot/blob/master/NEWS.md"
 }

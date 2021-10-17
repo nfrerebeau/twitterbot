@@ -2,7 +2,7 @@
 #' \tabular{ll}{
 #'  **Package:** \tab twitterbot \cr
 #'  **Type:** \tab Package \cr
-#'  **Version:** \tab 0.1 \cr
+#'  **Version:** \tab 0.0.0.9000 \cr
 #'  **License:** \tab GPL-3 \cr
 #' }
 #' @author

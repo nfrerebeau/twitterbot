@@ -1,6 +1,6 @@
 Package: twitterbot
 Title: A Twitter Bot for the Lab
-Version: 0.1.9000
+Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Nicolas",
              family = "Frerebeau",
