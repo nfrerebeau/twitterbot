@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/index.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/clean.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/compose.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/hal.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/logger.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/post.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/twitterbot-package.html</loc>
+  </url>
+</urlset>
