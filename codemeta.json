@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "twitterbot",
-  "description": "Accesses documents from the Open\n    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the latest\n    scientific publications.",
+  "description": "Accesses documents from the Open Archive HAL\n    <https://hal.archives-ouvertes.fr> and tweets the latest scientific\n    publications.",
   "name": "twitterbot: A Twitter Bot for the Lab",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1.9000",
@@ -49,19 +49,6 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
-      "identifier": "testthat",
-      "name": "testthat",
-      "version": ">= 3.0.0",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=testthat"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
       "provider": {
@@ -83,6 +70,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 3.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": [
@@ -129,7 +129,7 @@
   ],
   "codeRepository": "https://github.com/nfrerebeau/twitterbot",
   "readme": "https://github.com/nfrerebeau/twitterbot/blob/master/README.md",
-  "fileSize": "29.783KB",
+  "fileSize": "29.833KB",
   "keywords": [
     "open-archives",
     "twitter-bot",
@@ -153,5 +153,5 @@
   ],
   "issueTracker": "https://github.com/nfrerebeau/twitterbot/issues",
   "developmentStatus": "https://www.repostatus.org/#wip",
-  "relatedLink": "https://gitlab.huma-num.fr/archeosciences/twitterbot"
+  "relatedLink": ["https://gitlab.huma-num.fr/archeosciences/twitterbot", "https://nfrerebeau.github.io/twitterbot"]
 }

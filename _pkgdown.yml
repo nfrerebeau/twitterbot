@@ -1,0 +1,9 @@
+url: https://nfrerebeau.github.io/twitterbot
+development:
+  mode: auto
+
+template:
+  opengraph:
+    twitter:
+      creator: "@nfrerebeau"
+      card: summary_large_image
