@@ -2,7 +2,8 @@
 
 #' Get Documents From HAL
 #'
-#' @param id A [`character`] string giving the structure or the author id.
+#' @param id A [`character`] string giving the structure or the author (IdHal)
+#'  id.
 #' @param limit An [`integer`] specifying the number of results to be returned.
 #' @details
 #'  Retrieves documents from HAL published during the last year.
@@ -21,6 +22,20 @@ NULL
 #' @rdname hal
 #' @export
 get_hal_team <- function(id, limit = 10) {
+  id <- as.character(id)
+  query <- paste0("structId_i:", id)
+  get_hal(query, limit = limit)
+}
+
+#' @rdname hal
+#' @export
+get_hal_author <- function(id, limit = 10) {
+  id <- as.character(id)
+  query <- paste0("authIdHal_s:", id)
+  get_hal(query, limit = limit)
+}
+
+get_hal <- function(query, limit = 10) {
   # Query parameters
   hal_fields <- c(
     "authFullName_s",      # Auteur
@@ -37,9 +52,8 @@ get_hal_team <- function(id, limit = 10) {
     "language_s",          # Langue du document
     "uri_s"                # URL du document
   )
-  id <- as.character(id)
   hal_params <- list(
-    q = paste0("structId_i:", id),
+    q = query,
     fl = hal_fields,
     fq = "producedDate_tdate:[NOW/YEAR-1YEARS TO NOW]",
     fq = "docType_s:(ART OR OUV OR COUV OR DOUV OR SOFTWARE)",

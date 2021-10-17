@@ -12,9 +12,8 @@ has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 <!-- badges: end -->
 
-This package accesses documents from the [Open Archive
-HAL](https://hal.archives-ouvertes.fr/) and tweets the latest scientific
-publications of your team (see it in action:
+This package accesses documents from open archives and tweets the latest
+scientific publications of your team (see it in action:
 [@CRP2Abib](https://twitter.com/crp2abib)).
 
 ## Installation
@@ -29,6 +28,15 @@ remotes::install_github("nfrerebeau/twitterbot")
 
 ## Usage
 
+**twitterbot** currently supports:
+
+-   [Open Archive HAL](https://hal.archives-ouvertes.fr/):
+    `get_hal_team()` (team) or `get_hal_author()` (personnal).
+
+You can schedule a [cron job](https://crontab.guru/) with
+[**cronR**](https://github.com/bnosac/cronR) or use GitHub actions to
+schedule tweets on a daily basis.
+
 ### Tweet your latest publications
 
 ``` r
@@ -42,12 +50,10 @@ path <- file.path(Sys.getenv("HOME"), "hal.log")
 hal <- get_hal_team(id = "399901", limit = 100)
 
 ## Post the last ten publications
+## Authenticate via access token
+## See vignette("auth", package = "rtweet")
 msg <- post(hal, log = path, keep = 1:10)
 ```
-
-You can schedule a [cron job](https://crontab.guru/) with
-[**cronR**](https://github.com/bnosac/cronR) or use GitHub actions to
-schedule tweets on a daily basis.
 
 ## Code of Conduct
 

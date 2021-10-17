@@ -3,12 +3,16 @@
 \name{hal}
 \alias{hal}
 \alias{get_hal_team}
+\alias{get_hal_author}
 \title{Get Documents From HAL}
 \usage{
 get_hal_team(id, limit = 10)
+
+get_hal_author(id, limit = 10)
 }
 \arguments{
-\item{id}{A \code{\link{character}} string giving the structure or the author id.}
+\item{id}{A \code{\link{character}} string giving the structure or the author (IdHal)
+id.}
 
 \item{limit}{An \code{\link{integer}} specifying the number of results to be returned.}
 }
