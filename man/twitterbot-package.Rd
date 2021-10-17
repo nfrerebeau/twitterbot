@@ -5,25 +5,25 @@
 \alias{twitterbot-package}
 \alias{_PACKAGE}
 \alias{twitterbot}
-\title{twitterbot: Tweet Last Publications From The IRAMAT-CRP2A Laboratory}
+\title{twitterbot: A Twitter Bot for the Lab}
 \description{
 Accesses documents from the Open
-    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the last
-    scientific publications from the CRP2A lab on a daily basis.
+    Archive HAL <https://hal.archives-ouvertes.fr> and tweets the lastest
+    scientific publications.
 }
 \details{
 \tabular{ll}{
- \strong{Package:} \tab twitterbot \cr
- \strong{Type:} \tab Package \cr
- \strong{Version:} \tab 0.1 \cr
- \strong{License:} \tab GPL-3 \cr
+\strong{Package:} \tab twitterbot \cr
+\strong{Type:} \tab Package \cr
+\strong{Version:} \tab 0.1 \cr
+\strong{License:} \tab GPL-3 \cr
 }
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/crp2a/twitterbot}
-  \item Report bugs at \url{https://github.com/crp2a/twitterbot/issues}
+  \item \url{https://github.com/nfrerebeau/twitterbot}
+  \item Report bugs at \url{https://github.com/nfrerebeau/twitterbot/issues}
 }
 
 }
@@ -31,10 +31,10 @@ Useful links:
 \strong{Full list of authors and contributors} (alphabetic order)
 
 \tabular{ll}{
- Nicolas Frerebeau \tab \emph{Université Bordeaux Montaigne, France} \cr
+Nicolas Frerebeau \tab \emph{Université Bordeaux Montaigne, France} \cr
 }
 
-\strong{Package maintainer}
+*\emph{Package maintainer}
 
 Nicolas Frerebeau\cr
 \email{nicolas.frerebeau@u-bordeaux-montaigne.fr}

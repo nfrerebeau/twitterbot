@@ -1,18 +1,18 @@
 #' @details
 #' \tabular{ll}{
-#'  \strong{Package:} \tab twitterbot \cr
-#'  \strong{Type:} \tab Package \cr
-#'  \strong{Version:} \tab 0.1 \cr
-#'  \strong{License:} \tab GPL-3 \cr
+#'  **Package:** \tab twitterbot \cr
+#'  **Type:** \tab Package \cr
+#'  **Version:** \tab 0.1 \cr
+#'  **License:** \tab GPL-3 \cr
 #' }
 #' @author
-#' \strong{Full list of authors and contributors} (alphabetic order)
+#' **Full list of authors and contributors** (alphabetic order)
 #'
 #' \tabular{ll}{
-#'  Nicolas Frerebeau \tab \emph{Université Bordeaux Montaigne, France} \cr
+#'  Nicolas Frerebeau \tab *Université Bordeaux Montaigne, France* \cr
 #' }
 #'
-#' \strong{Package maintainer}
+#' **Package maintainer*
 #'
 #' Nicolas Frerebeau\cr
 #' \email{nicolas.frerebeau@@u-bordeaux-montaigne.fr}

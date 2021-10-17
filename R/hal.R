@@ -1,4 +1,19 @@
-#' @include AllGenerics.R
+# ACCESS HAL DOCUMENTS
+
+#' Get Documents From HAL
+#'
+#' @param x A [`list`] of document references.
+#' @param id A [`character`] string giving the structure id.
+#' @param limit An [`integer`] specifying the number of results to be returned.
+#' @param log A [`data.frame`].
+#' @param keep An [`integer`] vector giving the indices of the documents to be
+#'  kept.
+#' @return
+#'  A [`list`] of document references. Each element of the list is a list of
+#'  class `hal_document`.
+#' @author N. Frerebeau
+#' @name hal
+#' @rdname hal
 NULL
 
 #' @rdname hal
