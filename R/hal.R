@@ -4,6 +4,8 @@
 #'
 #' @param id A [`character`] string giving the structure or the author (IdHal)
 #'  id.
+#' @param type A [`character`] string giving the type of the documents to be
+#'  returned (see HAL API documentation).
 #' @param limit An [`integer`] specifying the number of results to be returned.
 #' @details
 #'  Retrieves documents from HAL published during the last year.
@@ -15,11 +17,11 @@
 #' \dontrun{
 #' get_hal_team("399901")
 #' }
-#' @name hal
-#' @rdname hal
+#' @name get_hal
+#' @rdname get_hal
 NULL
 
-#' @rdname hal
+#' @rdname get_hal
 #' @export
 get_hal_team <- function(id, limit = 10) {
   id <- as.character(id)
@@ -27,7 +29,7 @@ get_hal_team <- function(id, limit = 10) {
   get_hal(query, limit = limit)
 }
 
-#' @rdname hal
+#' @rdname get_hal
 #' @export
 get_hal_author <- function(id, limit = 10) {
   id <- as.character(id)
@@ -35,7 +37,8 @@ get_hal_author <- function(id, limit = 10) {
   get_hal(query, limit = limit)
 }
 
-get_hal <- function(query, limit = 10) {
+get_hal <- function(query, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
+                    limit = 10) {
   # Query parameters
   hal_fields <- c(
     "authFullName_s",      # Auteur
@@ -52,11 +55,12 @@ get_hal <- function(query, limit = 10) {
     "language_s",          # Langue du document
     "uri_s"                # URL du document
   )
+  hal_types <- paste0(type, collapse = " OR ")
   hal_params <- list(
     q = query,
     fl = hal_fields,
     fq = "producedDate_tdate:[NOW/YEAR-1YEARS TO NOW]",
-    fq = "docType_s:(ART OR OUV OR COUV OR DOUV OR SOFTWARE)",
+    fq = sprintf("docType_s:(%s)", hal_types),
     fq = "inPress_bool:false",
     sort = "producedDate_tdate asc",
     rows = limit,

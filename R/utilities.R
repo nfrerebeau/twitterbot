@@ -8,7 +8,7 @@
 #' @author N. Frerebeau
 #' @keywords internal
 #' @noRd
-keyword_to_hashtag <- function(x) {
+hashtag_keyword <- function(x) {
   x <- as.character(x)
   # Title case
   tag <- tools::toTitleCase(x)
@@ -21,13 +21,26 @@ keyword_to_hashtag <- function(x) {
   tag
 }
 
-domain_to_hashtag <- function(x) {
+hashtag_domain <- function(x, lang = "en") {
+  lang <- ifelse(any(c("en", "fr") == lang), lang, "en") # Defaults to English
   index <- which(.hal_domain$domain %in% x)
-  tag <- .hal_domain$tag[index]
+  tag <- .hal_domain[[lang]][index]
   # Remove doublons
   tag <- as.character(tag)
   tag <- unique(tag)
   tag
+}
+
+hashtag_open <- function(x, lang = "en") {
+  open_access <- ""
+  if (any(is_oa_license(x) | is_oa_doi(x))) {
+    open_access <- switch(
+      lang,
+      fr = "#ScienceOuverte",
+      "#OpenAccess" # Defaults to English
+    )
+  }
+  open_access
 }
 
 # Open Access ==================================================================

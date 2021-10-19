@@ -29,6 +29,8 @@
 "_PACKAGE"
 
 #' @import solrium
+#' @importFrom franc franc
 #' @importFrom rtweet get_timeline post_tweet
+#' @importFrom tools toTitleCase
 #' @importFrom utils read.table
 NULL

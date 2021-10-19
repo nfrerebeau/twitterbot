@@ -31,28 +31,29 @@ compose.hal_documents <- function(x, ...) {
 #' @rdname compose
 #' @export
 compose.hal_document <- function(x, ...) {
-
-  halId_s <- x[["halId_s"]]
-  title_s <- x[["title_s"]][[1]]
-  licence_s <- x[["licence_s"]]
-  domain_s <- x[["domainAllCode_s"]]
-  doiId_s <- x[["doiId_s"]]
-  uri_s <- x[["uri_s"]]
+  ## Get data
+  halId_s <- x$halId_s
+  title_s <- x$title_s
+  licence_s <- x$licence_s
+  domain_s <- x$domainAllCode_s
+  doiId_s <- x$doiId_s
+  uri_s <- x$uri_s
+  language_s <- x$language_s
 
   if (length(title_s) == 0) return(NULL)
 
-  # Title: 135 to 138 char
-  title <- trimws(strtrim(title_s, 135))
-  if (nchar(title_s) > 135) title <- paste0(title, "...")
+  ## Detect language
+  lang_s <- vapply(X = title_s, FUN = franc::franc, FUN.VALUE = character(1))
+  lang_i <- strtrim(lang_s, 2) == language_s # FIXME: will not work every time
+  lang <- ifelse(any(lang_i), language_s, "en") # Switch to English if no match
 
-  # Hashtags
-  ## Open Access: 0 to 11 char
-  open_access <- is_oa_license(licence_s) | is_oa_doi(doiId_s)
-  license <- ifelse(open_access, "#OpenAccess", "")
+  ## Hashtags
+  ## Open Access: 0 to 11 (en) or 15 (fr) char
+  license <- hashtag_open(c(licence_s, doiId_s), lang = lang)
 
   ## Domains: 0 to 80 char
   if (!is.null(domain_s)) {
-    tag <- domain_to_hashtag(domain_s)
+    tag <- hashtag_domain(domain_s, lang = lang)
     hashtag <- paste0(tag, collapse = " ")
     while(nchar(hashtag) > 80) {
       tag <- utils::head(tag, -1)
@@ -62,25 +63,35 @@ compose.hal_document <- function(x, ...) {
     hashtag <- ""
   }
 
-  # URL: 23 char (will be altered by Twitter)
+  ## URL: 23 char (will be altered by Twitter)
   if (!is.null(doiId_s)) {
-    url <- paste0("https://dx.doi.org/", doiId_s)
+    url <- paste0("https://doi.org/", doiId_s)
   } else {
     url <- uri_s
   }
 
-  # Text: 22 + 138 + 11 + 80 + 23 = 274 char
-  text <- sprintf("New publication: \"%s\" %s %s %s",
-                  title, license, hashtag, url)
+  ## Intro
+  intro <- switch(
+    lang,
+    fr = "Nouvelle publication : ",
+    "New publication: " # Defaults to English
+  )
 
-  # Remove extra spaces
+  ## Title: adjust length
+  extra <- sprintf(" %s %s %s", license, hashtag, url)
+  max_char <- 280 - nchar(intro) - nchar(extra) - 5
+  title_s <- title_s[which.max(lang_i)]
+  title <- trimws(strtrim(title_s, max_char))
+  if (nchar(title_s) > max_char) title <- paste0(title, "...")
+  text <- sprintf("%s\"%s\"%s", intro, title, extra)
+
+  ## Remove extra spaces, if any
   tweet <- gsub("\\s+", " ", text)
 
-  # Check tweet length
+  ## Check tweet length (without url)
   tweet_clean <- gsub("https?://[[:graph:]]+\\s?", "", tweet)
-
   if (nchar(tweet_clean) + 23 > 280)
-    stop("Tweet needs to be less than 280 characters.", call. = FALSE)
+    stop("Tweet must be less than 280 characters.", call. = FALSE)
 
   structure(tweet, class = "message", id = halId_s)
 }
