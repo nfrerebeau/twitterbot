@@ -4,7 +4,7 @@
 #'
 #' @param id A [`character`] string giving the structure or the author (IdHal)
 #'  id.
-#' @param type A [`character`] string giving the type of the documents to be
+#' @param type A [`character`] vector giving the type of the documents to be
 #'  returned (see HAL API documentation).
 #' @param limit An [`integer`] specifying the number of results to be returned.
 #' @details
@@ -23,18 +23,22 @@ NULL
 
 #' @rdname get_hal
 #' @export
-get_hal_team <- function(id, limit = 10) {
-  id <- as.character(id)
+get_hal_team <- function(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
+                         limit = 10) {
+  id <- paste(as.character(id), collapse = " OR ")
+  id <- ifelse(length(id) == 1, id, sprintf("(%s)", id))
   query <- paste0("structId_i:", id)
-  get_hal(query, limit = limit)
+  get_hal(query, type = type, limit = limit)
 }
 
 #' @rdname get_hal
 #' @export
-get_hal_author <- function(id, limit = 10) {
-  id <- as.character(id)
+get_hal_author <- function(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
+                           limit = 10) {
+  id <- paste(as.character(id), collapse = " OR ")
+  id <- ifelse(length(id) == 1, id, sprintf("(%s)", id))
   query <- paste0("authIdHal_s:", id)
-  get_hal(query, limit = limit)
+  get_hal(query, type = type, limit = limit)
 }
 
 get_hal <- function(query, type = c("ART", "OUV", "DOUV", "SOFTWARE"),

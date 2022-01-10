@@ -7,7 +7,7 @@
 \usage{
 clean(x, ...)
 
-\method{clean}{messages}(x, log = NULL, keep = 1:10, ...)
+\method{clean}{messages}(x, log = NULL, select = NULL, ...)
 }
 \arguments{
 \item{x}{A \code{\link{list}} of class \code{messages}.}
@@ -17,8 +17,8 @@ clean(x, ...)
 \item{log}{A \code{\link{character}} string giving the path of the log file
 (see below).}
 
-\item{keep}{An \code{\link{integer}} vector giving the indices of the messages to be
-kept.}
+\item{select}{An \code{\link{integer}} or a \code{\link{logical}} vector specifying the indices
+of the messages to keep.}
 }
 \value{
 A \code{\link{list}} of \code{\link{character}} string (tweet message).

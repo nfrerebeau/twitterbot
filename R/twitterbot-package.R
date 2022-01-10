@@ -29,8 +29,10 @@
 "_PACKAGE"
 
 #' @import solrium
+#' @importFrom anytime anytime
 #' @importFrom franc franc
 #' @importFrom rtweet get_timeline post_tweet
+#' @importFrom tidyRSS tidyfeed
 #' @importFrom tools toTitleCase
 #' @importFrom utils read.table
 NULL

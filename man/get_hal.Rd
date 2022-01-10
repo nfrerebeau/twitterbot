@@ -6,18 +6,18 @@
 \alias{get_hal_author}
 \title{Get Documents From HAL}
 \usage{
-get_hal_team(id, limit = 10)
+get_hal_team(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"), limit = 10)
 
-get_hal_author(id, limit = 10)
+get_hal_author(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"), limit = 10)
 }
 \arguments{
 \item{id}{A \code{\link{character}} string giving the structure or the author (IdHal)
 id.}
 
-\item{limit}{An \code{\link{integer}} specifying the number of results to be returned.}
-
-\item{type}{A \code{\link{character}} string giving the type of the documents to be
+\item{type}{A \code{\link{character}} vector giving the type of the documents to be
 returned (see HAL API documentation).}
+
+\item{limit}{An \code{\link{integer}} specifying the number of results to be returned.}
 }
 \value{
 A \code{\link{list}} of document references. Each element of the \code{list} is a \code{list} of

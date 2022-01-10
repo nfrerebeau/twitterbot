@@ -3,13 +3,16 @@
 \name{post}
 \alias{post}
 \alias{post.hal_documents}
+\alias{post.rss_items}
 \alias{post.messages}
 \alias{post.message}
 \title{Post Tweet}
 \usage{
 post(x, ...)
 
-\method{post}{hal_documents}(x, log = NULL, keep = 1:10, silent = TRUE, test = FALSE, ...)
+\method{post}{hal_documents}(x, log = NULL, select = NULL, silent = TRUE, test = FALSE, ...)
+
+\method{post}{rss_items}(x, log = NULL, select = NULL, silent = TRUE, test = FALSE, ...)
 
 \method{post}{messages}(x, silent = TRUE, test = FALSE, ...)
 
@@ -23,8 +26,8 @@ post(x, ...)
 \item{log}{A \code{\link{character}} string giving the path of the log file (see
 below).}
 
-\item{keep}{An \code{\link{integer}} vector giving the indices of the messages to be
-kept.}
+\item{select}{An \code{\link{integer}} or a \code{\link{logical}} vector specifying the indices
+of the messages to be posted.}
 
 \item{silent}{A \code{\link{logical}} scalar: should the report of error messages be
 suppressed?}
@@ -36,6 +39,9 @@ Invisibly returns the tweet date, time and status id.
 }
 \description{
 Post Tweet
+}
+\note{
+Authenticate via access token (see \code{vignette("auth", package = "rtweet")}).
 }
 \section{Prevent Double Post}{
 

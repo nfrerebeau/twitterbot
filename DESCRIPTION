@@ -1,6 +1,6 @@
 Package: twitterbot
 Title: A Twitter Bot for the Lab
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     c(person(given = "Nicolas",
              family = "Frerebeau",
@@ -19,11 +19,13 @@ BugReports: https://github.com/nfrerebeau/twitterbot/issues
 Depends: 
     R (>= 3.4)
 Imports:
+    anytime,
     franc,
     rtweet,
     solrium,
     tools,
-    utils
+    utils,
+    tidyRSS
 Suggests: 
     knitr,
     rmarkdown,
@@ -38,6 +40,7 @@ RoxygenNote: 7.1.2
 Collate: 
     'hal.R'
     'log.R'
+    'rss.R'
     'tweet.R'
     'twitterbot-package.R'
     'utilities.R'

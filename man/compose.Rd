@@ -4,6 +4,8 @@
 \alias{compose}
 \alias{compose.hal_documents}
 \alias{compose.hal_document}
+\alias{compose.rss_items}
+\alias{compose.rss_item}
 \title{Compose Tweet}
 \usage{
 compose(x, ...)
@@ -11,6 +13,10 @@ compose(x, ...)
 \method{compose}{hal_documents}(x, ...)
 
 \method{compose}{hal_document}(x, ...)
+
+\method{compose}{rss_items}(x, ...)
+
+\method{compose}{rss_item}(x, ...)
 }
 \arguments{
 \item{x}{A \code{\link{list}} of document references

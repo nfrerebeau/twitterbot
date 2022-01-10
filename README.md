@@ -28,10 +28,15 @@ remotes::install_github("nfrerebeau/twitterbot")
 
 ## Usage
 
+``` r
+library(twitterbot)
+```
+
 **twitterbot** currently supports:
 
 -   [Open Archive HAL](https://hal.archives-ouvertes.fr/):
     `get_hal_team()` (team) or `get_hal_author()` (personnal).
+-   RSS feed : `get_rss()`
 
 You can schedule a [cron job](https://crontab.guru/) with
 [**cronR**](https://github.com/bnosac/cronR) or use GitHub actions to
@@ -40,8 +45,6 @@ schedule tweets on a daily basis.
 ### Tweet your latest publications
 
 ``` r
-library(twitterbot)
-
 ## Set the path of the log file
 ## This file ensures that no document is tweeted twice
 path <- file.path(Sys.getenv("HOME"), "hal.log")
@@ -50,10 +53,32 @@ path <- file.path(Sys.getenv("HOME"), "hal.log")
 hal <- get_hal_team(id = "399901", limit = 100)
 
 ## Post the last ten publications
-## Authenticate via access token
-## See vignette("auth", package = "rtweet")
-msg <- post(hal, log = path, keep = 1:10)
+post(hal, log = path, select = 1:10)
 ```
+
+> New publication: “Bayesian luminescence dating at Ghār-e Boof, Iran,
+> provides a new chronology for Middle and Upper Paleolithic in the
+> southern Zagros” #Palaeontology #Archaeology
+> <https://doi.org/10.1016/j.jhevol.2020.102926>
+
+### Tweet news from your website
+
+``` r
+## Set the path of the log file
+## This file ensures that no document is tweeted twice
+path <- file.path(Sys.getenv("HOME"), "rss.log")
+
+## Get news items
+url <- "https://www.archeosciences-bordeaux.fr/spip.php?page=backend-breves"
+rss <- get_rss(feed = url)
+
+## Post the last ten items
+post(rss, log = path, select = 1:10)
+```
+
+> En direct du labo : Création de l’UMR Archéosciences Bordeaux
+> #Communiqué
+> <https://www.archeosciences-bordeaux.fr/+Creation-de-l-UMR-Archeosciences-Bordeaux+>
 
 ## Code of Conduct
 
