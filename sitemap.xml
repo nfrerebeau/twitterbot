@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/404.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/authors.html</loc>
+  </url>
+  <url>
     <loc>https://nfrerebeau.github.io/twitterbot/index.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/news/index.html</loc>
   </url>
   <url>
     <loc>https://nfrerebeau.github.io/twitterbot/reference/clean.html</loc>
@@ -10,7 +28,13 @@
     <loc>https://nfrerebeau.github.io/twitterbot/reference/compose.html</loc>
   </url>
   <url>
-    <loc>https://nfrerebeau.github.io/twitterbot/reference/hal.html</loc>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/get_hal.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/get_rss.html</loc>
+  </url>
+  <url>
+    <loc>https://nfrerebeau.github.io/twitterbot/reference/index.html</loc>
   </url>
   <url>
     <loc>https://nfrerebeau.github.io/twitterbot/reference/logger.html</loc>

@@ -24,6 +24,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -36,18 +38,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">twitterbot</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9001</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -57,7 +53,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/nfrerebeau/twitterbot/">
+  <a href="https://github.com/nfrerebeau/twitterbot/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -74,105 +70,137 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="twitterbot" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#twitterbot" class="anchor"></a>twitterbot</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="twitterbot">twitterbot<a class="anchor" aria-label="anchor" href="#twitterbot"></a>
+</h1></div>
 <!-- badges: start -->
 
-<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <!-- badges: end --></p>
-<p>This package accesses documents from open archives and tweets the latest scientific publications of your team (see it in action: <a href="https://twitter.com/crp2abib">@CRP2Abib</a>).</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You you can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<p><a href="https://www.repostatus.org/#wip" class="external-link"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <!-- badges: end --></p>
+<p>This package accesses documents from open archives and tweets the latest scientific publications of your team (see it in action: <a href="https://twitter.com/crp2abib" class="external-link">@CRP2Abib</a>).</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You you can install the development version from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"nfrerebeau/twitterbot"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nfrerebeau/twitterbot" class="external-link">twitterbot</a></span><span class="op">)</span></code></pre></div>
 <p><strong>twitterbot</strong> currently supports:</p>
 <ul>
 <li>
-<a href="https://hal.archives-ouvertes.fr/">Open Archive HAL</a>: <code><a href="reference/hal.html">get_hal_team()</a></code> (team) or <code><a href="reference/hal.html">get_hal_author()</a></code> (personnal).</li>
+<a href="https://hal.archives-ouvertes.fr/" class="external-link">Open Archive HAL</a>: <code><a href="reference/get_hal.html">get_hal_team()</a></code> (team) or <code><a href="reference/get_hal.html">get_hal_author()</a></code> (personnal).</li>
+<li>RSS feed : <code><a href="reference/get_rss.html">get_rss()</a></code>
+</li>
 </ul>
-<p>You can schedule a <a href="https://crontab.guru/">cron job</a> with <a href="https://github.com/bnosac/cronR"><strong>cronR</strong></a> or use GitHub actions to schedule tweets on a daily basis.</p>
-<div id="tweet-your-latest-publications" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tweet-your-latest-publications" class="anchor"></a>Tweet your latest publications</h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nfrerebeau/twitterbot">twitterbot</a></span><span class="op">)</span>
-
-<span class="co">## Set the path of the log file</span>
+<p>You can schedule a <a href="https://crontab.guru/" class="external-link">cron job</a> with <a href="https://github.com/bnosac/cronR" class="external-link"><strong>cronR</strong></a> or use GitHub actions to schedule tweets on a daily basis.</p>
+<div class="section level3">
+<h3 id="tweet-your-latest-publications">Tweet your latest publications<a class="anchor" aria-label="anchor" href="#tweet-your-latest-publications"></a>
+</h3>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Set the path of the log file</span>
 <span class="co">## This file ensures that no document is tweeted twice</span>
-<span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"HOME"</span><span class="op">)</span>, <span class="st">"hal.log"</span><span class="op">)</span>
+<span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"HOME"</span><span class="op">)</span>, <span class="st">"hal.log"</span><span class="op">)</span>
 
 <span class="co">## Get documents from HAL</span>
-<span class="va">hal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/hal.html">get_hal_team</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"399901"</span>, limit <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>
+<span class="va">hal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hal.html">get_hal_team</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"399901"</span>, limit <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>
 
 <span class="co">## Post the last ten publications</span>
-<span class="co">## Authenticate via access token</span>
-<span class="co">## See vignette("auth", package = "rtweet")</span>
-<span class="va">msg</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/post.html">post</a></span><span class="op">(</span><span class="va">hal</span>, log <span class="op">=</span> <span class="va">path</span>, keep <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="reference/post.html">post</a></span><span class="op">(</span><span class="va">hal</span>, log <span class="op">=</span> <span class="va">path</span>, select <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
+<blockquote>
+<p>New publication: “Bayesian luminescence dating at Ghār-e Boof, Iran, provides a new chronology for Middle and Upper Paleolithic in the southern Zagros” #Palaeontology #Archaeology <a href="https://doi.org/10.1016/j.jhevol.2020.102926" class="external-link uri">https://doi.org/10.1016/j.jhevol.2020.102926</a></p>
+</blockquote>
+</div>
+<div class="section level3">
+<h3 id="tweet-news-from-your-website">Tweet news from your website<a class="anchor" aria-label="anchor" href="#tweet-news-from-your-website"></a>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Set the path of the log file</span>
+<span class="co">## This file ensures that no document is tweeted twice</span>
+<span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"HOME"</span><span class="op">)</span>, <span class="st">"rss.log"</span><span class="op">)</span>
+
+<span class="co">## Get news items</span>
+<span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://www.archeosciences-bordeaux.fr/spip.php?page=backend-breves"</span>
+<span class="va">rss</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_rss.html">get_rss</a></span><span class="op">(</span>feed <span class="op">=</span> <span class="va">url</span><span class="op">)</span>
+
+<span class="co">## Post the last ten items</span>
+<span class="fu"><a href="reference/post.html">post</a></span><span class="op">(</span><span class="va">rss</span>, log <span class="op">=</span> <span class="va">path</span>, select <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
+<blockquote>
+<p>En direct du labo : Création de l’UMR Archéosciences Bordeaux #Communiqué <a href="https://www.archeosciences-bordeaux.fr/+Creation-de-l-UMR-Archeosciences-Bordeaux+" class="external-link uri">https://www.archeosciences-bordeaux.fr/+Creation-de-l-UMR-Archeosciences-Bordeaux+</a></p>
+</blockquote>
 </div>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the <strong>twitterbot</strong> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that the <strong>twitterbot</strong> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/nfrerebeau/twitterbot/">https://​github.com/​nfrerebeau/​twitterbot/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/nfrerebeau/twitterbot/issues">https://​github.com/​nfrerebeau/​twitterbot/​issues</a>
-</li>
+<li><a href="https://github.com/nfrerebeau/twitterbot/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/nfrerebeau/twitterbot/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small>GPL (&gt;= 3)</small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Nicolas Frerebeau <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5759-4944" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html#citation">Citing twitterbot</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Nicolas Frerebeau <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5759-4944" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Université Bordeaux Montaigne <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/nfrerebeau/twitterbot/actions"><img src="https://github.com/nfrerebeau/twitterbot/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/nfrerebeau/twitterbot/actions" class="external-link"><img src="https://github.com/nfrerebeau/twitterbot/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Université Bordeaux Montaigne.</p>
+  <p></p>
+<p>Developed by Nicolas Frerebeau, Université Bordeaux Montaigne.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -180,6 +208,8 @@
 
   
 
+
+  
 
   </body>
 </html>
