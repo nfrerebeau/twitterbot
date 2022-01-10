@@ -1,4 +1,5 @@
 test_that("Compose from HAL document", {
+  skip_if_not(l10n_info()$`UTF-8`)
   art <- list(
     domainAllCode_s = c("shs.archeo", "sdu.stu.pg", "spi.mat"),
     title_s = c("Ceci est un titre d'article vraiment très très très très très très très très très très très très très très très très très très très très très très long, vraiment particulièrement long",

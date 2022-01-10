@@ -3,6 +3,7 @@ test_that("Hashtags from keywods", {
   expect_identical(hashtag_keyword("R-Packages"), "#RPackages")
 })
 test_that("Hashtags from HAL domains", {
+  skip_if_not(l10n_info()$`UTF-8`)
   expect_identical(hashtag_domain("shs.archeo", "xx"), "#Archaeology")
   expect_identical(hashtag_domain("shs.archeo", "en"), "#Archaeology")
   expect_identical(hashtag_domain("shs.archeo", "fr"), "#Archéologie")
