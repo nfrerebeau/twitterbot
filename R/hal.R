@@ -26,7 +26,7 @@ NULL
 get_hal_team <- function(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
                          limit = 10) {
   id <- paste(as.character(id), collapse = " OR ")
-  id <- ifelse(length(id) == 1, id, sprintf("(%s)", id))
+  id <- sprintf("(%s)", id)
   query <- paste0("structId_i:", id)
   get_hal(query, type = type, limit = limit)
 }
@@ -36,7 +36,7 @@ get_hal_team <- function(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
 get_hal_author <- function(id, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
                            limit = 10) {
   id <- paste(as.character(id), collapse = " OR ")
-  id <- ifelse(length(id) == 1, id, sprintf("(%s)", id))
+  id <- sprintf("(%s)", id)
   query <- paste0("authIdHal_s:", id)
   get_hal(query, type = type, limit = limit)
 }
@@ -45,28 +45,29 @@ get_hal <- function(query, type = c("ART", "OUV", "DOUV", "SOFTWARE"),
                     limit = 10) {
   # Query parameters
   hal_fields <- c(
-    "authFullName_s",      # Auteur
-    "docType_s",           # Type de document (référentiel HAL)
-    "doiId_s",             # DOI
-    "fileMain_s ",         # URL du fichier principal
-    "halId_s",             # Identifiant HAL
-    "journalTitle_s",      # Titre du journal
-    "title_s",             # Titre du document
-    "producedDate_tdate",  # Date de production
-    "licence_s",           # Licence du document
-    "keyword_s",           # Mots clés
-    "domainAllCode_s",     # Codes domaines (référentiel HAL)
-    "language_s",          # Langue du document
-    "uri_s"                # URL du document
+    "authFullName_s",        # Auteur
+    "docType_s",             # Type de document (référentiel HAL)
+    "doiId_s",               # DOI
+    "fileMain_s ",           # URL du fichier principal
+    "halId_s",               # Identifiant HAL
+    "journalTitle_s",        # Titre du journal
+    "title_s",               # Titre du document
+    "producedDate_tdate",    # Date de production
+    "publicationDate_tdate", # Date de publication
+    "licence_s",             # Licence du document
+    "keyword_s",             # Mots clés
+    "domainAllCode_s",       # Codes domaines (référentiel HAL)
+    "language_s",            # Langue du document
+    "uri_s"                  # URL du document
   )
   hal_types <- paste0(type, collapse = " OR ")
   hal_params <- list(
     q = query,
     fl = hal_fields,
-    fq = "producedDate_tdate:[NOW/YEAR-1YEARS TO NOW]",
+    fq = "publicationDate_tdate:[NOW/YEAR-1YEARS TO NOW]",
     fq = sprintf("docType_s:(%s)", hal_types),
     fq = "inPress_bool:false",
-    sort = "producedDate_tdate asc",
+    sort = "publicationDate_tdate asc",
     rows = limit,
     wt = "json"
   )
